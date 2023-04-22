@@ -1,0 +1,95 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "آشنایی با امکانات جدید لاراول 10",
+      "description": "",
+      "image": "assets/img/course/1.png",
+      "price": 23000000,
+      "duration": 50,
+      "hardness": 3,
+      "category": {
+        "title": "برنامه نویسی"
+      },
+      "teacher": {"id":1, "fullname":  "غلامرضا فداکار"}
+    },
+    {
+      "id": 2,
+      "title": "ساخت وبسایت فروشگاهی با React و Next10",
+      "description": "",
+      "image": "assets/img/course/2.jpg",
+      "price": 2000000,
+      "duration": 80,
+      "hardness": 2,
+      "category": {
+        "title": "برنامه نویسی"
+      },
+      "teacher": {"id":1, "fullname":  "غلامرضا فداکار"}
+    },
+    {
+      "id": 3,
+      "title": "آموزش Redux",
+      "description": "",
+      "image": "assets/img/course/3.png",
+      "price": 2600000,
+      "duration": 45,
+      "hardness": 3,
+      "category": {
+        "title": "برنامه نویسی"
+      },
+      "teacher": {"id":2, "fullname":  "علی مرادی"}
+    },
+    {
+      "id": 4,
+      "title": "آموزش tailwindcss",
+      "description": "",
+      "image": "assets/img/course/4.jpg",
+      "price": 3000000,
+      "duration": 60,
+      "hardness": 1,
+      "category": {
+        "title": "برنامه نویسی"
+      },
+      "teacher":  {"id":4, "fullname":  "مریم حسینی"}
+    },
+    {
+      "id": 5,
+      "title": "آموزش زبان Dart",
+      "description": "",
+      "image": "assets/img/course/5.png",
+      "price": 5000000,
+      "duration": 120,
+      "hardness": 3,
+      "category": {
+        "title": "برنامه نویسی"
+      },
+      "teacher": {"id":3, "fullname":  "زهرا رضایی"}
+    },
+    {
+      "id": 6,
+      "title": "آموزش کامل Vue3",
+      "description": "",
+      "image": "assets/img/course/6.png",
+      "price": 4000000,
+      "duration": 30,
+      "hardness": 2,
+      "category": {
+        "title": "برنامه نویسی"
+      },
+      "teacher": {"id":2, "fullname":  "علی مرادی"}
+    }
+
+
+  ],
+  "teachers" : [
+    {"id":1, "fullname":  "غلامرضا فداکار"},
+    {"id":2, "fullname":  "علی مرادی"},
+    {"id":3, "fullname":  "زهرا رضایی"},
+    {"id":4, "fullname":  "مریم حسینی"}
+  ],
+  "hardnesses": [
+    {"id":1, "label":  "مقدماتی"},
+    {"id":2, "label":  "پیشرفته"},
+    {"id":3, "label":  "حرفه ای"}
+  ]
+}
