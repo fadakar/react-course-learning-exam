@@ -8,9 +8,7 @@
       "price": 23000000,
       "duration": 50,
       "hardness": 3,
-      "category": {
-        "title": "برنامه نویسی"
-      },
+      "category": {"id":1, "title":  "برنامه نویسی"},
       "teacher": {"id":1, "fullname":  "غلامرضا فداکار"}
     },
     {
@@ -21,9 +19,7 @@
       "price": 2000000,
       "duration": 80,
       "hardness": 2,
-      "category": {
-        "title": "برنامه نویسی"
-      },
+      "category": {"id":1, "title":  "برنامه نویسی"},
       "teacher": {"id":1, "fullname":  "غلامرضا فداکار"}
     },
     {
@@ -34,9 +30,7 @@
       "price": 2600000,
       "duration": 45,
       "hardness": 3,
-      "category": {
-        "title": "برنامه نویسی"
-      },
+      "category": {"id":1, "title":  "برنامه نویسی"},
       "teacher": {"id":2, "fullname":  "علی مرادی"}
     },
     {
@@ -47,9 +41,7 @@
       "price": 3000000,
       "duration": 60,
       "hardness": 1,
-      "category": {
-        "title": "برنامه نویسی"
-      },
+      "category": {"id":2, "title":  "طراحی"},
       "teacher":  {"id":4, "fullname":  "مریم حسینی"}
     },
     {
@@ -60,9 +52,7 @@
       "price": 5000000,
       "duration": 120,
       "hardness": 3,
-      "category": {
-        "title": "برنامه نویسی"
-      },
+      "category": {"id":1, "title":  "برنامه نویسی"},
       "teacher": {"id":3, "fullname":  "زهرا رضایی"}
     },
     {
@@ -73,13 +63,15 @@
       "price": 4000000,
       "duration": 30,
       "hardness": 2,
-      "category": {
-        "title": "برنامه نویسی"
-      },
+      "category": {"id":1, "title":  "برنامه نویسی"},
       "teacher": {"id":2, "fullname":  "علی مرادی"}
     }
 
 
+  ],
+  "categories" : [
+    {"id":1, "title":  "برنامه نویسی"},
+    {"id":2, "title":  "طراحی"}
   ],
   "teachers" : [
     {"id":1, "fullname":  "غلامرضا فداکار"},

@@ -1,16 +1,17 @@
 import React, {useEffect, useState} from 'react';
 
 
-function CourseFilter({onFilter, teachers, hardnesses, searchTerm}) {
+function CourseFilter({onFilter, teachers, hardnesses, categories, searchTerm}) {
 
     const [filterState, setFilterState] = useState({
         searchTerm: '',
+        category: '',
         teachers: [],
         hardnesses: [],
     });
 
     useEffect(() => {
-        searchTerm && setFilterState({...filterState, searchTerm })
+        searchTerm && setFilterState({...filterState, searchTerm})
     }, [searchTerm]);
 
 
@@ -21,7 +22,7 @@ function CourseFilter({onFilter, teachers, hardnesses, searchTerm}) {
             } else {
                 filterState[key].push(value);
             }
-            setFilterState({ ...filterState });
+            setFilterState({...filterState});
         } else {
             setFilterState({
                 ...filterState,
@@ -38,11 +39,13 @@ function CourseFilter({onFilter, teachers, hardnesses, searchTerm}) {
     const clearHandler = () => {
         setFilterState({
             searchTerm: '',
+            category: '',
             teachers: [],
             hardnesses: []
         });
         onFilter({
             searchTerm: '',
+            category: '',
             teachers: [],
             hardnesses: []
         });
@@ -58,6 +61,26 @@ function CourseFilter({onFilter, teachers, hardnesses, searchTerm}) {
                            onChange={(e) => changeFilterHandler('searchTerm', e.target.value)}/>
                     <i className="ti-search"></i>
                 </div>
+            </div>
+
+            <div className="form-group">
+                <h6>دسته بندی</h6>
+                <select className="form-control"
+                        defaultValue={''}
+                        value={filterState.category}
+                        onChange={(e) => changeFilterHandler('category', e.target.value)}>
+                    <option value={''}>
+                        لطفا انتخاب کنید ...
+                    </option>
+                    {categories?.map((category) => {
+                        return (
+                            <option key={category.id} value={category.id}>
+                                {category.title}
+                            </option>
+                        );
+                    })}
+                </select>
+
             </div>
 
             <div className="form-group">

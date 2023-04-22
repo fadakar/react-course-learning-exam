@@ -3,7 +3,7 @@ import CourseReducer from './course/course-slice'
 import TeacherReducer from "./teacher/teacher-slice";
 import HardnessReducer from "./hardness/hardness-slice";
 import WishReducer from "./wish/wish-slice";
-
+import CategoryReducer from "./category/category-slice"
 
 const Store = configureStore({
     reducer: {
@@ -11,6 +11,7 @@ const Store = configureStore({
         hardnesses: HardnessReducer,
         course: CourseReducer,
         wish: WishReducer,
+        categories: CategoryReducer,
     }
 });
 

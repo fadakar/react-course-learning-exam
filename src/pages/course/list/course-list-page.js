@@ -9,6 +9,7 @@ import {setHardness} from "../../../state/hardness/hardness-slice";
 import {setTeacher} from "../../../state/teacher/teacher-slice";
 import {useNavigate, useParams} from "react-router-dom";
 import SEO from "../../../utils/SEO";
+import {setCategories} from "../../../state/category/category-slice";
 
 
 function CourseListPage() {
@@ -16,6 +17,7 @@ function CourseListPage() {
     const params = useParams()
     const navigate = useNavigate();
     const {data: courseList, isLoading: courseListIsLoading} = useSelector(state => state.course);
+    const {data: categories} = useSelector(state => state.categories);
     const {data: teachers} = useSelector(state => state.teachers);
     const {data: hardnesses} = useSelector(state => state.hardnesses);
 
@@ -38,6 +40,8 @@ function CourseListPage() {
 
         if (filterState.searchTerm?.trim())
             url += `&q=${filterState.searchTerm}`;
+        if (filterState.category)
+            url += `&category.id=${filterState.category}`;
         if (filterState.teachers?.length > 0)
             for (let teacherId of filterState.teachers)
                 url += `&teacher.id=${teacherId}`;
@@ -66,6 +70,12 @@ function CourseListPage() {
             .then((response) => dispatch(setTeacher(response.data)))
     }, [dispatch]);
 
+    useEffect(() => {
+        Api.get('/categories')
+            .then((response) => dispatch(setCategories(response.data)))
+    }, [dispatch]);
+
+
 
     const onFilterHandler = (filters) => {
         setFilterState(filters);
@@ -90,6 +100,7 @@ function CourseListPage() {
                             <div className="bg-white sidebar-widgets p-4">
                                 <CourseFilter
                                     searchTerm={params.searchTerm}
+                                    categories={categories}
                                     teachers={teachers}
                                     hardnesses={hardnesses}
                                     onFilter={onFilterHandler}/>
