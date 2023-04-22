@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function LayoutFooter(props) {
     return (
@@ -13,7 +14,7 @@ function LayoutFooter(props) {
                                     <h3 className="font-2">آیا سوالی دارید؟</h3>
                                     <span>ما به شما کمک خواهیم کرد تا شغل و رشد خود را افزایش دهید.</span>
                                 </div>
-                                <a href="#" className="btn btn-call_action_wrap">امروز با ما تماس بگیرید</a>
+                                <Link to={'/about'} className="btn btn-call_action_wrap">امروز با ما تماس بگیرید</Link>
                             </div>
 
                         </div>
@@ -29,7 +30,7 @@ function LayoutFooter(props) {
 
                             <div className="col-lg-5 col-md-5">
                                 <div className="footer_widget">
-                                    <img src="assets/img/logo-light.png" className="img-footer small mb-2" alt=""/>
+                                    <img src="/assets/img/logo-light.png" className="img-footer small mb-2" alt=""/>
                                     <h4 className="extream mb-3 font-2">آیا به کمک تیم پشتیبانی<br/>نیاز دارید؟</h4>
                                     <p>هر ماه با عضویت در خبرنامه ما از به‌روزرسانی‌ها، معاملات جدید، آموزش‌ها و
                                         تخفیف‌ها
@@ -103,8 +104,7 @@ function LayoutFooter(props) {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-12 col-md-12 text-center">
-                                <p className="mb-0">© 2022 قالب SkillUp ارائه شده مدرس <a href="https://rtl-theme.com/">راست
-                                    چین</a></p>
+                                <p className="mb-0">© 2022 قالب SkillUp ارائه شده مدرس </p>
                             </div>
                         </div>
                     </div>
