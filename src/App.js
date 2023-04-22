@@ -1,6 +1,6 @@
 import './App.css';
 import {LayoutMain} from "./pages/layout";
-import {AboutPage, CourseListPage, HomePage, WishListPage} from "./pages";
+import {AboutPage, CourseListPage, Error404Page, HomePage, WishListPage} from "./pages";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import CourseSingleShow from "./pages/course/single-show/course-single-show";
 import {Provider} from "react-redux";
@@ -19,6 +19,7 @@ function App() {
                         <Route path="course/:searchTerm?" element={<CourseListPage/>}/>
                         <Route path="course/:id/show" element={<CourseSingleShow/>}/>
                         <Route path="profile/wish" element={<WishListPage/>}/>
+                        <Route path="*" element={<Error404Page/>}/>
                     </Routes>
                 </LayoutMain>
             </Provider>
