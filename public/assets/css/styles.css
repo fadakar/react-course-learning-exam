@@ -9442,3 +9442,9 @@ footer.skin-dark-footer ul.footer-bottom-social li a:hover, footer.skin-dark-foo
 .lmp_caption h4 {
     font-family: 'vazir-bold', sans-serif;
 }
+
+
+
+.nav-menu li:has(a.active) a{
+    color: #06e000 !important;
+}
