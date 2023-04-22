@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {removeFromWish} from "../../../state/wish/wish-slice";
+import SEO from "../../../utils/SEO";
 
 function WishListPage(props) {
     const dispatch = useDispatch();
@@ -42,16 +43,26 @@ function WishListPage(props) {
     };
 
     return (
-        <section className="mt-5">
-            <div className="container">
-                <div className="row align-items-center justify-content-between">
-                    <div className="col-12">
-                        <h4>لیست علاقمندی های من</h4>
-                        {wishList?.length > 0 ? renderList() : <><hr /><h5 className="text-muted text-center">علاقمندی وجود ندارد</h5></>}
+        <>
+            <SEO
+                title="لیست علاقمندی های من"
+                description="با اسکیل اپ اموزشگاه شما میتوانید خود را بروزنگه دارید"
+                name="اسکیل اپ"
+                type="article"/>
+
+            <section className="mt-5">
+                <div className="container">
+                    <div className="row align-items-center justify-content-between">
+                        <div className="col-12">
+                            <h4>لیست علاقمندی های من</h4>
+                            {wishList?.length > 0 ? renderList() : <>
+                                <hr/>
+                                <h5 className="text-muted text-center">علاقمندی وجود ندارد</h5></>}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     );
 }
 

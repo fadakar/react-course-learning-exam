@@ -6,22 +6,25 @@ import CourseSingleShow from "./pages/course/single-show/course-single-show";
 import {Provider} from "react-redux";
 import Store from "./state/Store";
 import ScrollToTop from "./utils/ScrollToTop";
+import {HelmetProvider} from "react-helmet-async";
 
 function App() {
     return (
         <BrowserRouter>
-            <ScrollToTop />
+            <ScrollToTop/>
             <Provider store={Store}>
-                <LayoutMain>
-                    <Routes>
-                        <Route index element={<HomePage/>}/>
-                        <Route path="about" element={<AboutPage/>}/>
-                        <Route path="course/:searchTerm?" element={<CourseListPage/>}/>
-                        <Route path="course/:id/show" element={<CourseSingleShow/>}/>
-                        <Route path="profile/wish" element={<WishListPage/>}/>
-                        <Route path="*" element={<Error404Page/>}/>
-                    </Routes>
-                </LayoutMain>
+                <HelmetProvider>
+                    <LayoutMain>
+                        <Routes>
+                            <Route index element={<HomePage/>}/>
+                            <Route path="about" element={<AboutPage/>}/>
+                            <Route path="course/:searchTerm?" element={<CourseListPage/>}/>
+                            <Route path="course/:id/show" element={<CourseSingleShow/>}/>
+                            <Route path="profile/wish" element={<WishListPage/>}/>
+                            <Route path="*" element={<Error404Page/>}/>
+                        </Routes>
+                    </LayoutMain>
+                </HelmetProvider>
             </Provider>
         </BrowserRouter>
     );

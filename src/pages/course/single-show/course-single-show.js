@@ -5,6 +5,7 @@ import Api from "../../../utils/api";
 import {CourseHardness, Price} from "../../../components";
 import {addToWish} from "../../../state/wish/wish-slice";
 import {ConfirmModal} from "../../../components/elements";
+import SEO from "../../../utils/SEO";
 
 function CourseSingleShow(props) {
     const dispatch = useDispatch();
@@ -41,6 +42,12 @@ function CourseSingleShow(props) {
     const renderDetails = () => {
         return (
             <>
+                <SEO
+                    title={courseState.title}
+                    description={courseState.title}
+                    name="اسکیل اپ"
+                    type="article"/>
+
                 <div className="ed_detail_head bg-cover" style={{background: '#f4f4f4 url(assets/img/banner-3.jpg)'}}
                      data-overlay="8">
                     <div className="container">

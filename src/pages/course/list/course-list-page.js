@@ -8,6 +8,7 @@ import Api from "../../../utils/api";
 import {setHardness} from "../../../state/hardness/hardness-slice";
 import {setTeacher} from "../../../state/teacher/teacher-slice";
 import {useNavigate, useParams} from "react-router-dom";
+import SEO from "../../../utils/SEO";
 
 
 function CourseListPage() {
@@ -74,99 +75,108 @@ function CourseListPage() {
 
 
     return (
-        <section className="gray">
-            <div className="container">
-                <div className="row">
+        <>
+            <SEO
+                title="لیست دوره ها"
+                description="با اسکیل اپ اموزشگاه شما میتوانید خود را بروزنگه دارید"
+                name="اسکیل اپ"
+                type="article"/>
 
-                    <div className="py-5 py-xl-0 col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                        <div className="bg-white sidebar-widgets p-4">
-                            <CourseFilter
-                                searchTerm={params.searchTerm}
-                                teachers={teachers}
-                                hardnesses={hardnesses}
-                                onFilter={onFilterHandler}/>
+            <section className="gray">
+                <div className="container">
+                    <div className="row">
+
+                        <div className="py-5 py-xl-0 col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                            <div className="bg-white sidebar-widgets p-4">
+                                <CourseFilter
+                                    searchTerm={params.searchTerm}
+                                    teachers={teachers}
+                                    hardnesses={hardnesses}
+                                    onFilter={onFilterHandler}/>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="col-xl-8 col-lg-8 col-md-12 col-sm-12">
-                        <div className="row">
-                            <div className="col-lg-12 col-md-12 col-sm-12">
-                                <div className="short_wraping">
-                                    <div className="row m-0 align-items-center justify-content-between">
+                        <div className="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+                            <div className="row">
+                                <div className="col-lg-12 col-md-12 col-sm-12">
+                                    <div className="short_wraping">
+                                        <div className="row m-0 align-items-center justify-content-between">
 
-                                        <div className="col-lg-4 col-md-5 col-sm-12  col-sm-6">
-                                            <div className="shorting_pagination_laft">
-                                                <h6 className="m-0">نمایش
-                                                    <span className="px-2">
+                                            <div className="col-lg-4 col-md-5 col-sm-12  col-sm-6">
+                                                <div className="shorting_pagination_laft">
+                                                    <h6 className="m-0">نمایش
+                                                        <span className="px-2">
                                                         {(currentPage * perPage) - perPage + 1}-{(currentPage) * perPage}
                                                     </span>
-                                                    از
+                                                        از
 
-                                                    <span className="px-2">{totalCount}</span>
-                                                </h6>
-                                            </div>
-                                        </div>
-
-                                        <div className="col-lg-8 col-md-7 col-sm-12 col-sm-6">
-                                            <div className="dlks_152">
-                                                <div className="shorting-right ml-2">
-                                                    <label>مرتب سازی :</label>
-                                                    <select className="form-control"
-                                                            onChange={(e) => setSort(e.target.value)}>
-                                                        <option value="_sort=id&_order=desc">
-                                                            لطفا انتخاب کنید...
-                                                        </option>
-                                                        <option value="_sort=price&_order=asc">
-                                                            قیمت صعودی
-                                                        </option>
-                                                        <option value="_sort=price&_order=desc">
-                                                            قیمت نزولی
-                                                        </option>
-                                                    </select>
+                                                        <span className="px-2">{totalCount}</span>
+                                                    </h6>
                                                 </div>
-                                                <div className="lmk_485">
-                                                    <select className="form-control"
-                                                            value={perPage}
-                                                            onChange={(e) => setPerPage(e.target.value)}>
-                                                        <option value="2">2</option>
-                                                        <option value="5">5</option>
-                                                        <option value="10">10</option>
-                                                        <option value="25">25</option>
-                                                        <option value="50">50</option>
-                                                    </select>
+                                            </div>
+
+                                            <div className="col-lg-8 col-md-7 col-sm-12 col-sm-6">
+                                                <div className="dlks_152">
+                                                    <div className="shorting-right ml-2">
+                                                        <label>مرتب سازی :</label>
+                                                        <select className="form-control"
+                                                                onChange={(e) => setSort(e.target.value)}>
+                                                            <option value="_sort=id&_order=desc">
+                                                                لطفا انتخاب کنید...
+                                                            </option>
+                                                            <option value="_sort=price&_order=asc">
+                                                                قیمت صعودی
+                                                            </option>
+                                                            <option value="_sort=price&_order=desc">
+                                                                قیمت نزولی
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                    <div className="lmk_485">
+                                                        <select className="form-control"
+                                                                value={perPage}
+                                                                onChange={(e) => setPerPage(e.target.value)}>
+                                                            <option value="2">2</option>
+                                                            <option value="5">5</option>
+                                                            <option value="10">10</option>
+                                                            <option value="25">25</option>
+                                                            <option value="50">50</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div className="row justify-content-center">
+                            <div className="row justify-content-center">
 
-                            <CourseList courses={courseList} isLoading={courseListIsLoading} colcount={2}/>
+                                <CourseList courses={courseList} isLoading={courseListIsLoading} colcount={2}/>
 
-                        </div>
-
-                        <div className="row">
-                            <div className="col-lg-12 col-md-12 col-sm-12">
-                                <Pagination
-                                    className="pagination-bar"
-                                    currentPage={currentPage}
-                                    totalCount={totalCount}
-                                    pageSize={perPage}
-                                    onPageChange={(pageNumber) => {
-                                        setCurrentPage(pageNumber)
-                                    }}
-                                />
                             </div>
+
+                            <div className="row">
+                                <div className="col-lg-12 col-md-12 col-sm-12">
+                                    <Pagination
+                                        className="pagination-bar"
+                                        currentPage={currentPage}
+                                        totalCount={totalCount}
+                                        pageSize={perPage}
+                                        onPageChange={(pageNumber) => {
+                                            setCurrentPage(pageNumber)
+                                        }}
+                                    />
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
-
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
+
     );
 }
 

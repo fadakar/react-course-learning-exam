@@ -1,8 +1,15 @@
 import React from 'react';
+import SEO from "../../utils/SEO";
 
 function AboutPage() {
     return (
         <>
+            <SEO
+                title="درباره اسکیل اپ"
+                description="با اسکیل اپ اموزشگاه شما میتوانید خود را بروزنگه دارید"
+                name="اسکیل اپ"
+                type="article"/>
+
             <section className="mt-5">
                 <div className="container">
                     <div className="row align-items-center justify-content-between">

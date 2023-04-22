@@ -4,6 +4,7 @@ import {Link, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {setCourse, setCourseLoading} from "../../state/course/course-slice";
 import Api from "../../utils/api";
+import SEO from "../../utils/SEO";
 
 function HomePage() {
 
@@ -39,6 +40,12 @@ function HomePage() {
 
     return (
         <>
+            <SEO
+                title="اسکیل اپ اموزشگاه سریع شما"
+                description="با اسکیل اپ اموزشگاه شما میتوانید خود را بروزنگه دارید"
+                name="اسکیل اپ"
+                type="article" />
+
             <div className="hero_banner image-cover image_bottom h4_bg">
                 <div className="container">
                     <div className="row align-items-center">
