@@ -5,7 +5,7 @@ const initialState = {
 }
 
 const WishSlice = createSlice({
-    name: 'course',
+    name: 'wish',
     initialState,
     reducers: {
         addToWish: (state, {payload}) => {
